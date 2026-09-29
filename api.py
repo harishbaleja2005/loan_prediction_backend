@@ -9,7 +9,7 @@ model=load("loan_prediction.pkl")
 
 @app.get("/")
 def test():
-    return{"message":"api is working"}
+    return{"message":"loan prediction api is working"}
 
 @app.post("/predict")
 def predict(self_employed: str,annual_income: int,loan_amount: int,loan_term: int,cibil_score: int,residential_assets_value: int,bank_asset_value: int):
