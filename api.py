@@ -32,9 +32,9 @@ def predict(self_employed: str,annual_income: int,loan_amount: int,loan_term: in
     prediction=model.predict(new_data)
 
     if prediction[0]==1:
-        loan="Loan Approved"
+        loan="Approved"
     else:
-        loan="Loan Rejected"
+        loan="Rejected"
 
     return{
     "self_employed":self_employed,
