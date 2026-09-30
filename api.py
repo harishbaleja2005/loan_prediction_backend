@@ -1,9 +1,21 @@
+from fastapi.middleware.cors import CORSMiddleware
 from joblib import load
 from fastapi import FastAPI
 import pandas as pd
 import joblib
 
 app=FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://loan-prediction-frontend.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model=load("loan_prediction.pkl")
 
